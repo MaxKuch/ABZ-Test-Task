@@ -1,0 +1,15 @@
+.section{
+    padding-top: 148px;
+    padding-bottom: 160px;
+    @media (max-width: 769px){
+        padding-top: 112px;
+        padding-bottom: 120px;
+    }
+    @media (max-width: 360px){
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+    &_grey-bg{
+        background-color: $bgDark;
+    }
+}

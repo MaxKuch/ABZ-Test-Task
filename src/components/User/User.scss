@@ -1,0 +1,59 @@
+.user{
+    max-width: 200px;
+    position: relative;
+    &__img{
+        max-width: 70px;
+        max-height: 70px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        object-fit: cover;
+    }
+    &__name{
+        word-wrap: break-word;
+        width: 100%;
+    }
+    &__email{
+        cursor: pointer;
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        &:hover ~  .user__email-placeholder{
+            visibility: visible;
+            opacity: 1;
+        }
+        &-wrapper{
+            position: relative;
+            width: 100%;
+        }
+        &-placeholder {
+            visibility: hidden;
+            opacity: 0;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 18px;
+            height: 60px;
+            transition: opacity .2s ease;
+            &:hover{
+                visibility: visible;
+                opacity: 1;
+            }
+            & span{
+                position: absolute;
+                top: 0;
+                margin-top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #333;
+                font-family: 'Source Sans Pro', sans-serif;
+                color: #fefefe;
+                padding: 7px;
+                border-radius: 3px;
+                line-height: 1;
+                font-size: 14px;
+            }
+        }
+    }
+}

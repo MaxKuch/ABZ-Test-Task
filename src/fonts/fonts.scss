@@ -1,0 +1,14 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url("#{$file-path}.woff") format("woff");
+    font-display: swap;
+  }
+}
+
+@include font-face('Source Sans Pro', './Source Sans Pro/SourceSansPro-Regular', 400);
+@include font-face('PT Sans', './PT Sans/PTSans-Regular', 400);
+@include font-face('Open Sans', './Open Sans/OpenSans-Regular', 400);
+@include font-face('Open Sans', './Open Sans/OpenSans-SemiBold', 600);

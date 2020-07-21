@@ -1,0 +1,26 @@
+.section-users{
+    &__header{
+        margin-bottom: 75px;
+        @media (max-width: 360px){
+            margin-bottom: 35px;
+        }
+    }
+    &__users-wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row-gap: 60px;
+        justify-content: center;
+        justify-items: center;
+        margin-bottom: 35px;
+        @media (max-width: 650px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 450px){
+            grid-template-columns: 1fr;
+        }
+    }
+    & .main-container{
+        padding: 0;
+    }
+}
+

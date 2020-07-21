@@ -1,0 +1,90 @@
+.side-drawer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1200;
+    &__substrate{
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right:0;
+        bottom: 0;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: opacity .4s ease;
+    }
+    &__box{
+        position: relative;
+        z-index: 1;
+        width: 290px;
+        height: 100%;
+        background-color: #fff;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform .4s ease;
+    }
+    
+    &__header{
+        padding-left: 15px;
+        margin: 10px 0;
+    }
+
+    &__links-group{
+        padding-left: 15px;
+        padding-top: 25px;
+        padding-bottom: 24px;
+        border-top: 1px solid #e1e1e1;
+
+    }
+
+    &__link{
+        & a{
+            color: #000;
+        }
+        &:not(:last-child){
+            margin-bottom: 19px;
+            a.selected{
+                    color: $secondary
+            }
+        }
+    }
+    &:not(.open){
+        animation-name: drawerClose;
+        animation-duration: .4s;
+        animation-fill-mode: forwards;
+    }
+    &.open {
+        visibility: visible;
+        .side-drawer__box{
+            transform: translateX(0);
+        }
+        .side-drawer__substrate{
+            opacity: 1;
+        }
+    }
+}
+
+
+.drawer-toggle-button{
+    height: 15px;
+    width: 20px;
+    background: url('./img/menu-icon.svg') no-repeat center center;
+    @media(min-width: 769px){
+        display: none;
+    }
+}
+
+@keyframes drawerClose{
+    0%{
+        visibility: visible;
+    }
+    99%{
+        visibility: visible;
+    }
+    100%{
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,32 @@
+.button{
+    display: block;
+    background-color: $primary;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    outline: none !important;
+    width: 210px;
+    text-align: center;
+    padding: 7px 0;
+    &:not(.button_no-bg):hover{
+        background-color: $primaryDark;
+    }
+
+    &:not(.button_no-bg):disabled{
+        background-color: #d7d7d7;
+        color: #8d8c8c;
+    }
+
+    &_no-bg{
+        width: auto;
+        background-color: transparent;
+        color: $primary;
+        padding: 0;
+        &:hover{
+            color: $primaryDark;
+            &:disabled{
+                color: #8d8c8c;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.header{
+    padding: 20px 0;
+    background-color: $bg;
+    @media (max-width: 360px) {
+        padding: 10px 0;
+    }
+    &__nav{
+        @media(max-width: 768px){
+            display: none;
+        }
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        &-item:not(:last-child){
+            margin-right: 29px;
+        }
+        &-link{
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+            color: $textColorDark;
+            &:hover{
+                color: $primary;
+                text-decoration: none;
+            }
+            &.selected{
+                color: $secondary;
+            }
+        }
+    }
+}

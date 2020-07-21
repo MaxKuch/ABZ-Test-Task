@@ -1,0 +1,68 @@
+.section-acquaintance{
+    &__header{
+        margin-bottom: 68px;
+        @media (max-width: 360px){
+            margin-bottom: 33px;
+        }
+    }
+    &__title{
+        margin-bottom: 60px;
+    }
+    &__second-title{
+        margin-bottom: 20px;
+    }
+    &__img{
+        & img{
+            padding-left: 10px;
+            width: 100%;
+            max-width: 348px;
+        }
+    }
+    &__parag{
+        margin-bottom: 26px;
+    }
+    @media (max-width: 360px){
+        &__content > [class*="col-"] {
+                padding-right: 0;
+                padding-left: 0;
+        } 
+    }
+
+    @media (max-width: 650px){
+        &__content{
+            flex-direction: column;
+            align-items: center;
+    }
+    
+    }
+    @media(max-width: 768px){
+        & .main-container{
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        &__img{
+            max-width: 277px;
+            @media(max-width: 650px){
+                max-width: 288px;
+                margin-bottom: 37px;
+            }
+            & img{
+                padding-left: 0;
+            }
+        }
+        &__content{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        &__text{
+            flex: 0 1 auto;
+            max-width: 100%;
+        }
+    }
+    &__sign-up{
+        @media(max-width: 360px){
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
