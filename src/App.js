@@ -7,6 +7,7 @@ import RegistrationSection from './components/RegistrationSection'
 import Modal from './components/Modal'
 import Footer from './components/Footer'
 import SideDrawer from './components/SideDrawer/SideDrawer';
+
 function App() {
   const [drawerOpen, SetDrawerState] = useState(false)
   return (

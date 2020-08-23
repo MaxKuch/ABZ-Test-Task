@@ -5,11 +5,11 @@ import Section from '../Section'
 import User from '../User'
 import Button from '../Button'
 import SectionHeader from '../SectionHeader'
-import {initPage, showMore} from '../redux/actions'
+import userActions from '../redux/actions/userActions'
 
-const UsersSection = (usersList) => {
-     const {users, page, initPage, showMore} = usersList
-     const loading = useSelector(state => state.app.loading)
+const UsersSection = ({users, page, initPage, showMore}) => {
+
+    const loading = useSelector(state => state.app.loading)
     useEffect(()=>{initPage()}, [])
     return (
         <Section extraClasses="section-users section_grey-bg">
@@ -31,9 +31,4 @@ const mapStateToProps = state => {
     return state.usersList
 }
 
-const mapDispatchToProps = {
-    initPage,
-    showMore
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersSection)
+export default connect(mapStateToProps, userActions)(UsersSection)

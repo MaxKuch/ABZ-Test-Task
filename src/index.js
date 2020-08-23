@@ -1,28 +1,24 @@
 import 'react-app-polyfill/stable'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './fonts/fonts.scss'
-import './index.scss'
 import thunk from 'redux-thunk'
 import {BrowserRouter as Router} from 'react-router-dom'
-import App from './App'
 import * as serviceWorker from './serviceWorker'
 import {compose, createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
+import App from './App'
 import {rootReducer} from './components/redux/rootReducer'
+import './fonts/fonts.scss'
+import './index.scss'
 
-const store = createStore(rootReducer, compose(
-  applyMiddleware(thunk)));
-const app = (
-  <Provider store={store}>
-    <App/>
-  </Provider>
-)
+const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
-    <Router>
-      {app}
-    </Router>,
+  <Router>
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  </Router>,
   document.getElementById('root')
 );
 

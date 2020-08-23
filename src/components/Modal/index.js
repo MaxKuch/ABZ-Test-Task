@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Button from '../Button'
-import {CLOSE} from '../redux/types'
+import modalActions from '../redux/actions/modalActions'
+
 const Modal = ({id, opened, message, status, closeModal}) => {
     return (
         <div className={`modal ${opened ? 'show' : 'hide'}`} id={id}>
@@ -29,10 +30,4 @@ const Modal = ({id, opened, message, status, closeModal}) => {
 
 const mapStateToProps = state => state.modal
 
-const mapDispatchToProps = dispatch => {
-    return {
-        closeModal: () => dispatch({type: CLOSE})
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Modal)
+export default connect(mapStateToProps, {closeModal: modalActions.closeModal})(Modal)

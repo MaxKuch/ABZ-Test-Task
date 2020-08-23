@@ -6,7 +6,8 @@ import { Field, reduxForm } from 'redux-form';
 import { validate, asyncValidate } from '../../helpers/validator'
 import { FileInput, TextInput, CheckboxGroup } from './Forms';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser, setRegSectionRef } from '../redux/actions'
+import userActions from '../redux/actions/userActions'
+import appActions from '../redux/actions/appActions'
 import fetch from 'cross-fetch'
 
 let RegistrationForm = (props)=>{
@@ -43,14 +44,18 @@ const RegistrationSection = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         if(ref.current)
-            dispatch(setRegSectionRef(ref.current))
+            dispatch(appActions.setRegSectionRef(ref.current))
     }, [])
     return (
         <Section refProp={ref} extraClasses="registration-section">
-            <SectionHeader extraClasses="registration-section__header" title="Register to get a work" addition="Attention! After successful registration and alert, update the list of users in the block from the top"/>
+            <SectionHeader 
+                extraClasses="registration-section__header" 
+                title="Register to get a work" 
+                addition="Attention! After successful registration and alert, update the list of users in the block from the top"
+            />
             <div className="row registration-section__form">
                 <div className="offset-lg-3 col-lg-6  offset-md-2 col-md-8 offset-sm-2 col-sm-8">
-                    <RegistrationForm onSubmit = {values => dispatch(addUser(values))}/>  
+                    <RegistrationForm onSubmit = {values => dispatch(userActions.addUser(values))}/>  
                 </div>
             </div>
         </Section>
